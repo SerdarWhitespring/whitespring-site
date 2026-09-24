@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Whitespring Development — Residential development, based in Washington, D.C.</title>
+<meta name="description" content="Whitespring Development acquires, designs and holds residential property in Washington, D.C.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:title" content="Whitespring Development">
+<meta property="og:description" content="Residential development, based in Washington, D.C.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Archivo:wght@400;500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#12201F;
+  --panel:#182D2A;
+  --bone:#EDE8DF;
+  --mute:#93A29D;
+  --amber:#C98A4B;
+  --line:rgba(237,232,223,.16);
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --gut:clamp(22px,5vw,88px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--ink:#12201F;--bone:#EDE8DF;--mute:#93A29D;--amber:#C98A4B;--panel:#182D2A;--line:rgba(237,232,223,.16)}
+}
+:root[data-theme="dark"]{--ink:#12201F;--bone:#EDE8DF;--mute:#93A29D;--amber:#C98A4B;--panel:#182D2A;--line:rgba(237,232,223,.16)}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:#12201F;
+  background-color:var(--ink);
+  color:var(--bone);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.62;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+h1,h2,h3{font-family:var(--serif);font-weight:300;margin:0;letter-spacing:-.012em}
+p{margin:0}
+
+/* ---------- header ---------- */
+.bar{
+  position:sticky;top:0;z-index:20;
+  background:var(--ink);
+  border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:16px;
+  padding:18px var(--gut);
+}
+.mark{display:flex;align-items:stretch;gap:13px;text-decoration:none}
+.mark .rule{width:1.5px;background:var(--amber);flex:0 0 auto;align-self:stretch;min-height:32px}
+.mark .lines{display:flex;flex-direction:column;justify-content:center}
+.mark .l1{font-family:"Jost",var(--sans);font-weight:500;font-size:clamp(15px,1.9vw,18px);letter-spacing:.155em;line-height:1;color:var(--bone)}
+.mark .l2{font-family:"Jost",var(--sans);font-weight:400;font-size:8.5px;letter-spacing:.404em;line-height:1;color:var(--mute);margin-top:7px}
+.menu{display:flex;gap:clamp(14px,2.4vw,30px);font-size:13px;color:var(--mute);flex-shrink:0}
+.menu a{white-space:nowrap;padding-bottom:2px;border-bottom:1px solid transparent}
+.menu a:hover{color:var(--bone);border-bottom-color:var(--amber)}
+@media (max-width:420px){
+  .bar{flex-wrap:wrap;gap:14px}
+  .menu{width:100%;justify-content:space-between;gap:6px;font-size:12px}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:min(84vh,780px);display:flex;align-items:flex-end;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(11,22,21,.9) 0,rgba(11,22,21,.5) 34%,rgba(11,22,21,.12) 70%,rgba(11,22,21,.3) 100%);
+}
+.hero-in{position:relative;z-index:2;width:100%;padding:0 var(--gut) clamp(34px,6vw,72px)}
+.hero h1{
+  font-size:clamp(31px,5.4vw,62px);
+  line-height:1.1;
+  max-width:19em;
+  text-wrap:balance;
+}
+.hero-foot{
+  margin-top:clamp(22px,3vw,34px);
+  display:flex;flex-wrap:wrap;gap:10px 30px;align-items:baseline;
+  border-top:1px solid var(--line);padding-top:16px;
+}
+.hero-foot p{font-size:13.5px;color:var(--mute);max-width:34em}
+.plate{font-size:12px;color:var(--mute);letter-spacing:.06em}
+
+/* ---------- generic section ---------- */
+section{padding:clamp(56px,9vw,124px) var(--gut)}
+.lede{font-family:var(--serif);font-size:clamp(21px,2.9vw,33px);line-height:1.42;max-width:26em;font-weight:300}
+.lede em{font-style:italic;color:var(--amber)}
+.sub{margin-top:26px;max-width:40em;color:var(--mute);font-size:15.5px}
+
+.kicker{font-size:12.5px;color:var(--mute);letter-spacing:.02em;margin-bottom:26px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+
+/* ---------- approach ---------- */
+.stages{display:grid;gap:clamp(26px,3.4vw,44px);grid-template-columns:repeat(auto-fit,minmax(196px,1fr));margin-top:8px}
+.stage{border-top:1px solid var(--line);padding-top:16px}
+.stage h3{font-size:19px;margin-bottom:8px}
+.stage p{font-size:14.5px;color:var(--mute);max-width:26em}
+
+/* ---------- work ---------- */
+.work{padding-bottom:clamp(30px,5vw,60px)}
+.plates{display:grid;gap:clamp(40px,6vw,86px)}
+.pj figure{margin:0}
+.pj img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.pj-meta{
+  margin-top:18px;display:grid;gap:8px 44px;
+  grid-template-columns:minmax(0,1.1fr) minmax(0,1.5fr) auto;
+  align-items:baseline;
+}
+.pj-meta h3{font-size:clamp(20px,2.3vw,27px)}
+.pj-meta .where{font-size:13px;color:var(--mute);margin-top:6px}
+.pj-meta p{font-size:14.5px;color:var(--mute)}
+.state{font-size:12.5px;color:var(--bone);white-space:nowrap;display:flex;align-items:center;gap:9px}
+.state::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--amber);flex:0 0 auto}
+.state.done::before{background:var(--mute)}
+@media (max-width:860px){
+  .pj-meta{grid-template-columns:1fr}
+  .pj-meta .state{order:3}
+}
+
+/* ---------- full band ---------- */
+.band{position:relative;min-height:min(56vh,440px);display:flex;align-items:flex-end;overflow:hidden;padding:0}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(11,22,21,.86),rgba(11,22,21,.15) 62%)}
+.band-in{position:relative;z-index:2;padding:0 var(--gut) clamp(30px,5vw,54px)}
+.band-in p{font-family:var(--serif);font-size:clamp(19px,2.6vw,29px);line-height:1.4;max-width:24em;font-weight:300}
+
+.trio{display:grid;gap:clamp(12px,1.8vw,22px);grid-template-columns:repeat(3,1fr);margin-top:clamp(30px,4vw,54px)}
+.trio figure{margin:0;overflow:hidden}
+.trio img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+@media (max-width:700px){.trio{grid-template-columns:1fr;gap:14px}.trio img{aspect-ratio:3/2}}
+.note{margin-top:18px;font-size:12.5px;color:var(--mute);max-width:44em}
+
+/* ---------- about split ---------- */
+.split{display:grid;gap:clamp(28px,4.6vw,66px);grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+@media (max-width:840px){.split{grid-template-columns:1fr}}
+.split img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.split-copy p+p{margin-top:16px}
+.split-copy p{color:var(--mute);font-size:15.5px;max-width:34em}
+.split-copy h2{font-size:clamp(25px,3.4vw,40px);line-height:1.18;margin-bottom:22px;max-width:16em}
+
+/* ---------- contact ---------- */
+.contact{position:relative;overflow:hidden}
+.contact>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.contact::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(11,22,21,.95),rgba(11,22,21,.72))}
+.contact-in{position:relative;z-index:2}
+.contact h2{font-size:clamp(27px,3.8vw,46px);line-height:1.14;max-width:18em}
+.cols{margin-top:clamp(30px,4vw,48px);display:grid;gap:26px 48px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));max-width:920px}
+.col{border-top:1px solid var(--line);padding-top:14px}
+.col dt{font-size:12.5px;color:var(--mute);margin-bottom:7px}
+.col dd{margin:0;font-size:15.5px;line-height:1.5}
+.col dd a{border-bottom:1px solid var(--line)}
+.col dd a:hover{border-bottom-color:var(--amber)}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:1px solid var(--line);
+  padding:26px var(--gut) 34px;
+  display:flex;flex-wrap:wrap;gap:12px 34px;align-items:baseline;justify-content:space-between;
+  font-size:12.5px;color:var(--mute);
+}
+.tag{font-family:var(--serif);font-style:italic;font-size:14.5px;color:var(--bone)}
+
+/* ---------- scroll progress ---------- */
+#prog{position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--amber);pointer-events:none}
+
+/* ---------- motion ----------
+   Deliberately visible, but disciplined: one long orchestrated entrance, depth
+   on scroll, and a single mask reveal per element. Every start state is gated
+   behind JS being alive and the visitor not having asked for less motion, so
+   the page is complete and readable without either. */
+.hero-shot{position:absolute;inset:-7% 0;will-change:transform}
+.hero-shot picture{display:contents}
+.hero-shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:78% 42%}
+@media (max-aspect-ratio: 1/1){.hero-shot img{object-position:50% 50%}}
+.shotbox{overflow:hidden}
+.bar{transition:padding .5s cubic-bezier(.2,.66,.3,1)}
+.mark{transition:transform .5s cubic-bezier(.2,.66,.3,1);transform-origin:left center}
+body.tight .bar{padding-top:12px;padding-bottom:12px}
+body.tight .mark{transform:scale(.9)}
+
+@media (prefers-reduced-motion: no-preference){
+  /* hero entrance */
+  html.js .hero-shot img{transform:scale(1.16)}
+  html.js .hero h1{clip-path:inset(0 0 112% 0);transform:translateY(26px)}
+  html.js .hero-foot{opacity:0;transform:translateY(20px)}
+  html.js .hero-foot::before{content:"";position:absolute;left:0;top:0;height:1px;width:0;background:var(--amber)}
+
+  html.js body.ready .hero-shot img{transform:scale(1);transition:transform 3s cubic-bezier(.14,.7,.26,1)}
+  html.js body.ready .hero h1{
+    clip-path:inset(0 0 -14% 0);transform:none;
+    transition:clip-path 1.5s cubic-bezier(.18,.7,.26,1) .25s,transform 1.5s cubic-bezier(.18,.7,.26,1) .25s;
+  }
+  html.js body.ready .hero-foot{opacity:1;transform:none;transition:opacity 1s ease .95s,transform 1.2s cubic-bezier(.18,.7,.26,1) .95s}
+  html.js body.ready .hero-foot::before{width:100%;transition:width 1.4s cubic-bezier(.18,.7,.26,1) 1.05s}
+
+  /* photographic plates: the wipe now carries a slow settle with it */
+  html.js .wipe{clip-path:inset(0 0 100% 0);transform:scale(1.1)}
+  html.js .wipe.shown{
+    clip-path:inset(0 0 0 0);transform:scale(1);
+    transition:clip-path 1.5s cubic-bezier(.2,.66,.28,1),transform 2.4s cubic-bezier(.16,.7,.26,1);
+  }
+
+  /* headings and blocks arrive behind a rising mask */
+  html.js .rise{clip-path:inset(0 0 108% 0);transform:translateY(20px)}
+  html.js .rise.shown{
+    clip-path:inset(0 0 -12% 0);transform:none;
+    transition:clip-path 1.05s cubic-bezier(.2,.68,.28,1),transform 1.05s cubic-bezier(.2,.68,.28,1);
+  }
+  html.js .stages .stage:nth-child(2).shown,html.js .cols .col:nth-child(2).shown{transition-delay:.11s}
+  html.js .stages .stage:nth-child(3).shown,html.js .cols .col:nth-child(3).shown{transition-delay:.22s}
+  html.js .stages .stage:nth-child(4).shown,html.js .cols .col:nth-child(4).shown{transition-delay:.33s}
+}
+.hero-foot{position:relative}
+
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <a class="mark" href="#top" aria-label="Whitespring Development, home">
+    <span class="rule" aria-hidden="true"></span>
+    <span class="lines">
+      <span class="l1">WHITESPRING</span>
+      <span class="l2">DEVELOPMENT</span>
+    </span>
+  </a>
+  <nav class="menu" aria-label="Sections">
+    <a href="#approach">Approach</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div id="prog" aria-hidden="true"></div>
+</header>
+
+<main id="top">
+
+  <div class="hero">
+    <div class="hero-shot">
+      <picture>
+        <source media="(max-aspect-ratio: 1/1)" srcset="assets/hero-mobile.jpg">
+        <img src="assets/hero.jpg" alt="A residential building at sunset in Washington, with the Capitol dome and the Washington Monument on the skyline">
+      </picture>
+    </div>
+    <div class="hero-in">
+      <h1>The details are the building.</h1>
+      <div class="hero-foot">
+        <p>Residential development in Washington, D.C.</p>
+        <span class="plate">Washington, D.C.</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <p class="lede rise">A home is shaped by what goes unnoticed at first: the proportion of a room, the weight of a door, the way the morning light arrives.</p>
+    <p class="sub">We give those details the attention most buildings never receive.</p>
+  </section>
+
+  <div class="band">
+    <img class="wipe" loading="lazy" decoding="async" src="assets/band.jpg" alt="Terraced residences with planted gardens at sunset">
+    <div class="band-in">
+      <p class="rise">We work where the neighborhood already functions, and try to leave it better
+        served than we found it.</p>
+    </div>
+  </div>
+
+  <section id="approach">
+    <p class="kicker rise">How a project moves through the company</p>
+    <div class="stages">
+      <div class="stage rise">
+        <h3>Identify</h3>
+        <p>Land chosen first for its neighborhood.</p>
+      </div>
+      <div class="stage rise">
+        <h3>Develop</h3>
+        <p>Design and approvals led by the specification, not the spreadsheet.</p>
+      </div>
+      <div class="stage rise">
+        <h3>Build</h3>
+        <p>Construction with partners we trust, held to a single standard.</p>
+      </div>
+      <div class="stage rise">
+        <h3>Finish</h3>
+        <p>Every home completed as carefully as it was drawn.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <img class="wipe" loading="lazy" decoding="async" src="assets/p2.jpg" alt="A timber and glass residential building at dusk"></div>
+
+  <section id="focus">
+    <p class="kicker rise">What we are looking for now</p>
+    <p class="lede rise">Land in neighborhoods worth building for, in Washington and beyond.</p>
+    <p class="sub">Off-market land and overlooked parcels are welcome. An address and the zoning are enough to begin a conversation.</p>
+  </section>
+
+
+  <section id="scale">
+    <p class="kicker rise">The character we are working toward</p>
+    <p class="lede rise">Stone, timber, glass and light, in proportions that feel right to live in.</p>
+    <p class="sub rise">Every material and every detail chosen, never merely approved.</p>
+    <div class="trio">
+      <figure><img class="wipe" loading="lazy" decoding="async" src="assets/s1.jpg" alt="A four-storey residential building in timber and stone at sunset"></figure>
+      <figure><img class="wipe" loading="lazy" decoding="async" src="assets/s2.jpg" alt="A stone and glass residential building on a city street at dusk"></figure>
+      <figure><img class="wipe" loading="lazy" decoding="async" src="assets/s3.jpg" alt="Low residential buildings stepped into a hillside with planted terraces at sunset"></figure>
+    </div>
+    <p class="note rise">Reference images. They show the character we are working toward, not completed Whitespring buildings.</p>
+  </section>
+
+  <section id="about">
+    <div class="split">
+      <div class="shotbox"><img class="wipe" loading="lazy" decoding="async" src="assets/living.jpg" alt="A living room with floor-to-ceiling windows looking toward the Washington Monument"></div>
+      <div class="split-copy">
+        <h2 class="rise">A new name in Washington.</h2>
+        <p>Whitespring Development is a Washington, D.C. company, privately held and led by its founder.</p>
+        <p>Three things we never trade away: the design, the materials, and the craftsmanship.</p>
+        <p>Particular by nature.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <img class="wipe" loading="lazy" decoding="async" src="assets/city.jpg" alt="The Washington, D.C. skyline at sunset">
+    <div class="contact-in">
+      <h2 class="rise">Land, partnerships and home enquiries.</h2>
+      <dl class="cols">
+        <div class="col rise">
+          <dt>Email</dt>
+          <dd><a href="mailto:serdar@whitespringdev.com">serdar@whitespringdev.com</a></dd>
+        </div>
+        <div class="col rise">
+          <dt>Office</dt>
+          <dd>1140 3rd Street NE, Suite 200<br>Washington, D.C. 20002</dd>
+        </div>
+        <div class="col rise">
+          <dt>Web</dt>
+          <dd><a href="https://www.whitespringdev.com">whitespringdev.com</a></dd>
+        </div>
+        <div class="col rise">
+          <dt>Bringing us a site</dt>
+          <dd>Send us the address and the zoning. We will take it from there.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>&copy; 2026 Whitespring Development</span>
+  <span class="tag">Quietly exceptional.</span>
+  <span>Washington, D.C.</span>
+</footer>
+
+
+<script>
+(function(){
+  var root=document.documentElement;
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  root.className+=' js';
+
+  function start(){ requestAnimationFrame(function(){ document.body.classList.add('ready'); }); }
+  if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded',start); } else { start(); }
+
+  var waiting=[].slice.call(document.querySelectorAll('.wipe,.rise'));
+  var shot=document.querySelector('.hero-shot');
+  var caption=document.querySelector('.band-in');
+  var prog=document.getElementById('prog');
+  var body=document.body;
+  var queued=false;
+
+  /* One rAF-throttled pass runs everything: reveals, depth, header state and
+     reading position. Elements the visitor scrolled straight past are revealed
+     too, so a fast scroll or a restored position can never leave a gap. */
+  function pass(){
+    queued=false;
+    var vh=window.innerHeight, y=window.scrollY;
+
+    for(var i=waiting.length-1;i>=0;i--){
+      if(waiting[i].getBoundingClientRect().top < vh*0.9){
+        waiting[i].classList.add('shown');
+        waiting.splice(i,1);
+      }
+    }
+
+    /* depth: the hero photograph trails the page, the band caption leads it */
+    if(shot && y < vh*1.4){ shot.style.transform='translate3d(0,'+(y*0.22).toFixed(2)+'px,0)'; }
+    if(caption){
+      var r=caption.parentNode.getBoundingClientRect();
+      if(r.top < vh && r.bottom > 0){
+        caption.style.transform='translate3d(0,'+(((vh-r.top)*-0.055)).toFixed(2)+'px,0)';
+      }
+    }
+
+    body.classList.toggle('tight', y>60);
+
+    var h=document.documentElement.scrollHeight-vh;
+    prog.style.width=(h>0?Math.min(100,Math.max(0,y/h*100)):0)+'%';
+  }
+  function ask(){ if(!queued){ queued=true; requestAnimationFrame(pass); } }
+
+  window.addEventListener('scroll',ask,{passive:true});
+  window.addEventListener('resize',ask,{passive:true});
+  window.addEventListener('load',ask);
+  ask();
+
+  setTimeout(function(){ waiting.forEach(function(el){ el.classList.add('shown'); }); waiting.length=0; },5000);
+})();
+</script>
+</body>
+</html>
