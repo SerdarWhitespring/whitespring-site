@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Whitespring Development">
+  <rect width="512" height="512" fill="#12201F"/>
+  <rect x="61.0" y="151.0" width="26.0" height="210.0" fill="#C98A4B"/>
+  <g fill="#EDE8DF" transform="translate(145.0,361.0)">
+    <path transform="translate(0.000,0) scale(0.300000,-0.300000)" d="M712 232 510 735 312 232 145 700H8L294 -37L510 458L726 -37L1013 700H875Z"/>
+  </g>
+</svg>
